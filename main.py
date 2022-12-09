@@ -48,5 +48,4 @@ while len(guessed_countries) < 41:
         z.color("#00005C")
         z.write("CONGRATULATIONS. YOU WIN !!!", font=('Arial', 18, 'bold'))
 
-
 screen.exitonclick()

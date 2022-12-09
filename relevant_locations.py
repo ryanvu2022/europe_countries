@@ -17,7 +17,7 @@ class RelevantLocations(Turtle):
         self.write("AFRICA", font=('Arial', 14, 'bold'))
 
     def add_seas(self):
-        self.color("blue")
+        self.color("#0008C1")
         self.goto(-305, 80)
         self.write("Atlantic Ocean", font=('Arial', 10, 'normal'))
         self.goto(-130, -250)
