@@ -1,5 +1,6 @@
 import turtle
 import pandas
+from relevant_locations import RelevantLocations
 
 screen = turtle.Screen()
 screen.title("Europe Countries Game")
@@ -12,33 +13,11 @@ data = pandas.read_csv("europe_countries.csv")
 europe_countries = data.country.to_list()
 guessed_countries = []
 
-z = turtle.Turtle()
-z.hideturtle()
-z.penup()
+relevant_locations = RelevantLocations()
+relevant_locations.add_continents()
+relevant_locations.add_seas()
+relevant_locations.add_exit_instruction()
 
-z.color("#1C6758")
-z.goto(265, -190)
-z.write("ASIA", font=('Arial', 14, 'bold'))
-z.goto(220, -215)
-z.write("TURKEY", font=('Arial', 12, 'normal'))
-z.goto(-150, -288)
-z.write("AFRICA", font=('Arial', 14, 'bold'))
-
-z.color("blue")
-z.goto(-305, 80)
-z.write("Atlantic Ocean", font=('Arial', 10, 'normal'))
-z.goto(-130, -250)
-z.write("Mediterranean Sea", font=('Arial', 10, 'normal'))
-z.goto(-120, 200)
-z.write("Norwegian Sea", font=('Arial', 10, 'normal'))
-z.goto(-115, 55)
-z.write("North Sea", font=('Arial', 10, 'normal'))
-z.goto(220, -140)
-z.write("Black Sea", font=('Arial', 10, 'normal'))
-
-z.color("#711A75")
-z.goto(-330, -310)
-z.write("Type 'exit' to quit the game", font=('Arial', 10, 'italic'))
 
 while len(guessed_countries) < 41:
     answer_country = screen.textinput(title=f"{len(guessed_countries)}/41 Countries Correct",
