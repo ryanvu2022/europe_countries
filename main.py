@@ -36,6 +36,9 @@ z.write("North Sea", font=('Arial', 10, 'normal'))
 z.goto(220, -140)
 z.write("Black Sea", font=('Arial', 10, 'normal'))
 
+z.color("#711A75")
+z.goto(-330, -310)
+z.write("Type 'exit' to quit the game", font=('Arial', 10, 'italic'))
 
 while len(guessed_countries) < 41:
     answer_country = screen.textinput(title=f"{len(guessed_countries)}/41 Countries Correct",
@@ -62,9 +65,9 @@ while len(guessed_countries) < 41:
         z = turtle.Turtle()
         z.hideturtle()
         z.penup()
-        z.goto(-200, 250)
+        z.goto(-200, 290)
         z.color("#00005C")
-        z.write("CONGRATULATIONS. YOU WIN", font=('Arial', 20, 'bold'))
+        z.write("CONGRATULATIONS. YOU WIN !!!", font=('Arial', 18, 'bold'))
 
 
 screen.exitonclick()
