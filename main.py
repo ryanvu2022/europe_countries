@@ -12,6 +12,30 @@ data = pandas.read_csv("europe_countries.csv")
 europe_countries = data.country.to_list()
 guessed_countries = []
 
+z = turtle.Turtle()
+z.hideturtle()
+z.penup()
+
+z.color("#1C6758")
+z.goto(265, -190)
+z.write("ASIA", font=('Arial', 14, 'bold'))
+z.goto(220, -215)
+z.write("TURKEY", font=('Arial', 12, 'normal'))
+z.goto(-150, -288)
+z.write("AFRICA", font=('Arial', 14, 'bold'))
+
+z.color("blue")
+z.goto(-305, 80)
+z.write("Atlantic Ocean", font=('Arial', 10, 'normal'))
+z.goto(-130, -250)
+z.write("Mediterranean Sea", font=('Arial', 10, 'normal'))
+z.goto(-120, 200)
+z.write("Norwegian Sea", font=('Arial', 10, 'normal'))
+z.goto(-115, 55)
+z.write("North Sea", font=('Arial', 10, 'normal'))
+z.goto(220, -140)
+z.write("Black Sea", font=('Arial', 10, 'normal'))
+
 
 while len(guessed_countries) < 41:
     answer_country = screen.textinput(title=f"{len(guessed_countries)}/41 Countries Correct",
@@ -36,3 +60,4 @@ while len(guessed_countries) < 41:
         t.write(answer_country, font=('Arial', 8, 'bold'))
 
 
+screen.exitonclick()
