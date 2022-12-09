@@ -16,6 +16,14 @@ guessed_countries = []
 while len(guessed_countries) < 41:
     answer_country = screen.textinput(title=f"{len(guessed_countries)}/41 Countries Correct",
                                       prompt="What's another country's name?").title()
+    if answer_country == "Exit":
+        missing_countries = list(set(europe_countries) - set(guessed_countries))
+        countries_to_learn = {
+            "Country": missing_countries
+        }
+        df = pandas.DataFrame(countries_to_learn)
+        df.to_csv("countries_to_learn.csv")
+        break
     if answer_country in europe_countries:
         if answer_country not in guessed_countries:
             guessed_countries.append(answer_country)
