@@ -58,6 +58,13 @@ while len(guessed_countries) < 41:
         t.goto(int(country_data.x), int(country_data.y))
         t.color("#CF0A0A")
         t.write(answer_country, font=('Arial', 8, 'bold'))
+    if len(guessed_countries) == 41:
+        z = turtle.Turtle()
+        z.hideturtle()
+        z.penup()
+        z.goto(-200, 250)
+        z.color("#00005C")
+        z.write("CONGRATULATIONS. YOU WIN", font=('Arial', 20, 'bold'))
 
 
 screen.exitonclick()
